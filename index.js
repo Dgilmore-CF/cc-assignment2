@@ -5,7 +5,7 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
 	var config = {
 	  app: {
-      	message: 'That's no moon.',
+      	message: 'Thats no moon.',
 	    name: 'Assignment 2',
 	    version: '1.0.0'
 	  },
