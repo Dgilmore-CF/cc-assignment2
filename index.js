@@ -3,20 +3,6 @@ addEventListener('fetch', event => {
 })
 
 async function handleRequest(request) {
-	var config = {
-	  app: {
-      	message: 'Thats no moon.',
-	    name: 'Assignment 2',
-	    version: '1.0.0'
-	  },
-	  ok: {
-	  	status:200
-	  },
-	  block: {
-	  	status:403
-	  }
-
-	}
  	const url = new URL(request.url);
  	var data = {starWars:[
  		"Try not. Do or do not. There is no try.",
@@ -38,7 +24,8 @@ async function handleRequest(request) {
 		response.content = 'No POSTS allowed'
 		response.type = 'application/json'
 		response.status = config.block.status
-  	}else{
+  	}
+	else{
 	    response.content = `<HTML><header>`+config.app.name+`</header><body>`+response.text+`</body><footer>Version: `+config.app.version+`</footer></HTML>`,
 	    response.type = 'text/html'
 	    response.status = config.ok.status
